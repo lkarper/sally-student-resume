@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sally Student - Resume</title> 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="application-root"></div>
+
+    <script
+      src="https://unpkg.com/react@16/umd/react.development.js">
+    </script>
+    <script
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">
+    </script>
+    <script
+        src="https://unpkg.com/babel-standalone@6/babel.min.js">
+    </script>
+    <script type="text/babel">
+        function App(props) {
+            return (
+                <div>
+                    <Header
+                        studentName={props.studentName}
+                    >
+                    <img src="https://vignette.wikia.nocookie.net/en.futurama/images/0/0c/ALeelaofHerOwn.jpg/revision/latest/top-crop/width/360/height/450?cb=20090716145134" 
+                            alt="Headshot of Sally Student" />
+                    </Header>
+                    
+                    <Main>
+                        <Section>
+
+                            <h2>Contact Info</h2>
+                            <address>
+                                <a href="mailto:sallystudent@planetexpress.biz">Contact via Email</a><br/>
+                                Or reach by phone at: 123-456-7890<br/>
+                                Send mail to:<br/>
+                                123 Fake Street,<br/>
+                                New New York, Earth
+                            </address>
+                        </Section>
+                        <Section>
+                            <h2>Education</h2>
+                                <h3>Mars University (2094-2098)</h3>
+                                <p>BS in Starship Engineering with a Minor in Extraterrestrial Martial Arts</p>
+                        </Section>
+                        <Section>
+                            <h2>Employment History</h2>
+                            <h3>Planet Express</h3>
+                                <h4>Title:</h4>
+                                    <p>Starship Captain</p>
+                                <h4>Dates of Employent:</h4>
+                                    <p>January 3000-present</p>
+                                <h4>Job description:</h4>
+                                    <p>Responsible for piloting a package-delivery starship throughout the universe.</p>
+                            <h3>Applied Cryogenics</h3>
+                                <h4>Title:</h4>
+                                    <p>Defrostee Counselor</p>
+                                <h4>Dates of Employent:</h4>
+                                    <p>June 2098-January 3000</p>
+                                <h4>Job description:</h4>
+                                    <p>Responsible for counseling recent defrostees.</p>
+                        </Section>
+                        <Section>
+                            <h2>Skills</h2>
+                            <ul>
+                                <li>Advanced starship piloting techniques</li>
+                                <li>Starship mechanics</li>
+                                <li>Basic Martian conversational skills</li>
+                                <li>Expert in multiple martial arts</li>
+                            </ul>
+                        </Section>
+                    </Main>
+                </div>
+            );
+        }
+
+        function Section(props) {
+            return (
+                <section>
+                    {props.children}    
+                </section>
+            );
+        }
+
+        function Main(props) {
+            return ( 
+                <main>
+                    {props.children}
+                </main>
+            );
+        }
+
+        function Header(props) {
+            return (
+                <header className="page-header">
+                    <h1>{props.studentName}'s Resume</h1>
+                    {props.children}
+                </header>
+            );
+        }
+
+        ReactDOM.render(
+            <App 
+                studentName="Sally Student"
+            />,
+            document.querySelector('#application-root')
+        );
+    </script>
+</body>
+</html>
